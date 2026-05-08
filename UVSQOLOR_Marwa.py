@@ -28,7 +28,7 @@ def ouvrir_image():
     chemin = filedialog.askopenfilename() #Elle ouvre une fenêtre système de sélection de fichier et retourne le chemin complet du fichier choisi par l'utilisateur.
     if chemin:
         image_originale = Image.open(chemin)
-        image_modifiee = image_originale.copy()
+        image_modifiee = image_originale.copy()  #Ce bloc charge une image depuis le disque dur et prépare deux versions : l'originale et une copie qui sera modifiée.
         rafraichir()
 
 # Annuler un effet
