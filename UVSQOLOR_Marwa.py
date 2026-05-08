@@ -61,7 +61,7 @@ def filtre_sepia():
     b = img[:, :, 2]
 
     nouveau_r = 0.393*r + 0.769*g + 0.189*b         #calcul nouvelle couleur à partir des coeff
-    nouveau_g = 0.349*r + 0.686*g + 0.168*b
+    nouveau_g = 0.349*r + 0.686*g + 0.168*b         #ermettent d’extraire individuellement les canaux R, G et B d’une image chargée sous forme de tableau NumPy.
     nouveau_b = 0.272*r + 0.534*g + 0.131*b
 
     #idée principale : somme R > somme G > somme B
