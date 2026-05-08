@@ -18,7 +18,7 @@ def rafraichir():
     global image_modifiee, label_image, photo
 
     photo = ImageTk.PhotoImage(image_modifiee)
-    label_image.config(image = photo)
+    label_image.config(image = photo)   #Elle modifie un widget Label existant pour y afficher une image
 
 # Ouvrir un fichier
 
