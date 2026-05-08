@@ -25,7 +25,7 @@ def rafraichir():
 def ouvrir_image():
     global image_originale, image_modifiee
 
-    chemin = filedialog.askopenfilename()
+    chemin = filedialog.askopenfilename() #Elle ouvre une fenêtre système de sélection de fichier et retourne le chemin complet du fichier choisi par l'utilisateur.
     if chemin:
         image_originale = Image.open(chemin)
         image_modifiee = image_originale.copy()
