@@ -70,7 +70,7 @@ def filtre_sepia():
     img[:, :, 1] = np.clip(nouveau_g, 0, 255)
     img[:, :, 2] = np.clip(nouveau_b, 0, 255)
 
-    image_modifiee = Image.fromarray(img.astype(np.uint8))
+    image_modifiee = Image.fromarray(img.astype(np.uint8))  #Elle transforme des nombres mathématiques en une image qu'on peut voir à l'écran
     rafraichir()
 
 
