@@ -77,7 +77,7 @@ def filtre_sepia():
 # Filtre Luminosité
 
 def luminosite(valeur_slider):
-    global image_originale, image_modifiee
+    global image_originale, image_modifiee  #Cette ligne indique à Python que les variables image_originale et image_modifiee sont des variables globales (définies en dehors de la fonction) et que la fonction a le droit de les modifier.
 
     m = float(valeur_slider)
 
