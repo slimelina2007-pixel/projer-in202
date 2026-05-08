@@ -107,7 +107,7 @@ def correction_gammma():
     dialogue_effet = tk.Toplevel(fenetre_principale)
     dialogue_effet.title("Luminosité")
     dialogue_effet.geometry("300x150")
-    dialogue_effet.grab_set()
+    dialogue_effet.grab_set()   #Cette ligne verrouille l'attention sur la fenêtre dialogue_effet. Elle empêche l'utilisateur d'interagir avec les autres fenêtres tant qu'il n'a pas fermé celle-ci.
     slider = tk.Scale(dialogue_effet, from_=0.05, to=0.95,
                       orient=tk.HORIZONTAL, length=200,
                       resolution=0.01, digits=2,
