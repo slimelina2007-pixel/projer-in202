@@ -204,7 +204,7 @@ def flou(valeur):
     global image_modifiee, image_originale    #Permet à la fonction de modifier les variables globales
 
     if image_originale:
-        base = image_originale
+        base = image_originale           #Stocke l'image originale dans une variable base pour travailler sur une copie
         noyau_taille = int(valeur)                                                                          #int car on travail avec une image discrète (pixels)
     if noyau_taille <= 0:
         return
