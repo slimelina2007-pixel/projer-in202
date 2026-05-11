@@ -254,18 +254,18 @@ def gaussien(valeur):
         x = np.array([-1, 0, 1])                            #pixel gauche, milieu, droit
         gauss = np.exp(-(x ** 2 )/ 2 * (sigma **2))         #formule loi normale appliqué sur chaque x
         gauss = gauss / gauss.sum()                         #garde somme 
-        noyau = np.zeros(sigma, sigma)
+        noyau = np.zeros(sigma, sigma)                      #créer une matrice carrée de taille sigma×sigma
 
         for ligne in range(sigma):
             for colonne in range(sigma):
 
-                noyau[ligne][colonne] = gauss[ligne] * gauss[colonne]   #création noyau 2D
+                noyau[ligne][colonne] = gauss[ligne] * gauss[colonne]   #création noyau 2D multipliant les poids de la ligne par les poids de la colonne
         
-        image_array = np.array(base)
-        resultat = np.zeros_like(image_array)
+        image_array = np.array(base)   #Convertit l'image PIL en tableau NumPy pour pouvoir faire des calculs
+        resultat = np.zeros_like(image_array)   #Crée un tableau vide de la même taille que l'image pour stocker le résultat du flou
         for i in range(3):
-            resultat[:, :, i] = convolve2d(image_array[:, :, i], noyau, mode='same', boundary='symm')
-        image_modifiee = Image.fromarray(np.clip(resultat, 0, 255).astype(np.uint8))
+            resultat[:, :, i] = convolve2d(image_array[:, :, i], noyau, mode='same', boundary='symm')   #Applique le noyau gaussien à chaque canal de couleur par convolution
+        image_modifiee = Image.fromarray(np.clip(resultat, 0, 255).astype(np.uint8))   #Convertit tableau NumPy  en image PIL pour l'affichage
         rafraichir()
 
 def dial_gauss():
