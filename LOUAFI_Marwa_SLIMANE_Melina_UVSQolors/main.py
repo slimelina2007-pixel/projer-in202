@@ -210,7 +210,7 @@ def flou(valeur):
         return
     noyau = np.ones((noyau_taille, noyau_taille), dtype=np.float32) / (noyau_taille*noyau_taille)           #creation directe en float32 au lieu de faire astype (convertion) #qstion d'optimisation
     image_mat = np.array(base).astype(np.float32)                                                           #tableau de 0 de mm taille que img_originale (qu'on va remplir avec convolution2d)
-    image_modifiee_np = np.zeros_like(image_mat)
+    image_modifiee_np = np.zeros_like(image_mat)      #Crée un tableau vide (rempli de 0) de la même taille que l'image pour y stocker le résultat du flou
     for i in range(3):                                                                                      #parcourt chaque canal (i = 0 => rouge, etc....)
         image_modifiee_np[:,:,i] = convolve2d(image_mat[:, :, i], noyau, mode='same', boundary='symm')
         image_modifiee = Image.fromarray(np.clip(image_modifiee_np, 0, 255).astype(np.uint8))
