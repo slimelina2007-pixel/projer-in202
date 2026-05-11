@@ -249,7 +249,7 @@ def gaussien(valeur):
     if image_originale:
         base = image_originale
         sigma = float(valeur)                               #sigma = intensité de flou
-        if sigma <= 0:
+        if sigma <= 0:                                      # flou positif n'a aucun sens
             return
         x = np.array([-1, 0, 1])                            #pixel gauche, milieu, droit
         gauss = np.exp(-(x ** 2 )/ 2 * (sigma **2))         #formule loi normale appliqué sur chaque x
