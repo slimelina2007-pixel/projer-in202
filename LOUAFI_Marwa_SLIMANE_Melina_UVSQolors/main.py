@@ -201,7 +201,7 @@ def filtre_contraste():
 
 
 def flou(valeur):
-    global image_modifiee, image_originale
+    global image_modifiee, image_originale    #Permet à la fonction de modifier les variables globales
 
     if image_originale:
         base = image_originale
